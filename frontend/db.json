@@ -53,20 +53,24 @@
       "id": "46fb",
       "placa": "ABC123",
       "entrada": "2025-07-16T03:11:53.594288",
-      "salida": null,
+      "salida": "2025-07-16T17:51:30.074Z",
       "valor": null
     }
   ],
-  "trabajadores": [
+  "users": [
     {
-      "id": 1,
-      "nombre": "Yoelmis",
-      "placa": "ABC123"
+      "id": "1",
+      "nombre": "yoelmis",
+      "email": "yoelmi@gmail.com",
+      "placa": "ABC123",
+      "role":"admin"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Maria A",
-      "placa": "DJK236"
+      "email": "maria@gmail.ccom",
+      "placa": "DJK236",
+      "role":"admin"
     }
   ]
 }

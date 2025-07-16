@@ -1,0 +1,60 @@
+<div id="register-main-container">
+  <div id="register-header-container">
+    <h2 id="register-title">Create your account</h2>
+  </div>
+
+  <div id="register-form-wrapper">
+    <form id="registerForm">
+      <div>
+        <label for="fullname" id="fullname-label">Full Name</label>
+        <div id="fullname-input-wrapper">
+          <input type="text" name="fullname" id="fullname" required />
+        </div>
+      </div>
+
+      <div>
+        <label for="username" id="username-label">Username</label>
+        <div id="username-input-wrapper">
+          <input type="text" name="username" id="username" required />
+        </div>
+      </div>
+
+      <div>
+        <label for="registerEmail" id="register-email-label">Email address</label>
+        <div id="register-email-input-wrapper">
+          <input type="email" name="email" id="registerEmail" required />
+        </div>
+      </div>
+      
+      <div>
+        <label for="placa" id="placa-label">Placa</label>
+        <div id="placa-input-wrapper">
+          <input type="text" name="placa" id="placa" required />
+        </div>
+      </div>
+
+      <div>
+        <label for="role" id="role-label">Role (admin/user)</label>
+        <div id="role-input-wrapper">
+          <input type="text" name="role" id="role" required />
+        </div>
+      </div>
+
+      <div>
+        <label for="registerPassword" id="register-password-label">Password</label>
+        <div id="register-password-input-wrapper">
+          <input type="password" name="password" id="registerPassword" required />
+        </div>
+      </div>
+
+      <div>
+        <button type="submit" id="register-button">Register</button>
+      </div>
+    </form>
+
+    <p id="login-text">
+      Already have an account?
+      <a href="/login" id="show-login">Sign in</a>
+    </p>
+  </div>
+</div>

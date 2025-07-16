@@ -1,0 +1,160 @@
+/* login*/
+
+#login-container {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+/* For lg:px-8, you'd typically use a media query: */
+@media (min-width: 1024px) {
+  #login-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+#header-login {
+  /* For sm:mx-auto sm:w-full sm:max-w-sm, typically with media queries: */
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; /* For sm:w-full */
+  max-width: 24rem; /* For sm:max-w-sm */
+}
+@media (min-width: 640px) {
+  #header-login, #form-login {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 24rem;
+  }
+}
+
+
+#sign-in-title {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #111827;
+}
+
+#form-login {
+  margin-top: 2.5rem;
+  /* Applying sm:mx-auto sm:w-full sm:max-w-sm to this container as well for consistency */
+}
+
+
+#loginForm > div:not(:first-child) {
+  margin-top: 1.5rem;
+}
+
+#email-label,
+#password-label {
+  display: block;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 500;
+  color: #111827;
+}
+
+#email-input-wrapper,
+#password-input-wrapper {
+  margin-top: 0.5rem;
+}
+
+#email,
+#password {
+  display: block;
+  width: 100%;
+  border-radius: 0.375rem;
+  background-color: #fff;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: #111827;
+  outline-width: 1px;
+  outline-offset: -1px;
+  outline-color: #d1d5db;
+}
+
+#email::placeholder,
+#password::placeholder {
+  color: #9ca3af;
+}
+
+#email:focus,
+#password:focus {
+  outline-width: 2px;
+  outline-offset: -2px;
+  outline-color: #4f46e5;
+}
+/* sm:text-sm/6 on inputs can be handled by media query if needed for responsiveness */
+@media (min-width: 640px) {
+  #email, #password {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+  }
+}
+
+#password-label-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#sign-in-button {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  border-radius: 0.375rem;
+  background-color: #620c9b;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  border: none; /* Ensure no default button border */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+#sign-in-button:hover {
+  background-color: #330d5f;
+}
+
+#sign-in-button:focus-visible {
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: #811c8a;
+}
+
+#register-text {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1.5rem;
+  color: #6b7280;
+}
+
+#show-register {
+  font-weight: 600;
+  color: #620a85;
+  text-decoration: none; /* Remove default underline from links */
+}
+
+#show-register:hover {
+  color: #660d72;
+}
