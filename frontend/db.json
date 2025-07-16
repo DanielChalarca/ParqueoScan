@@ -1,0 +1,72 @@
+{
+  "registros": [
+    {
+      "id": "6251",
+      "placa": "DJK-234",
+      "entrada": "2025-07-16T02:05:06.226328",
+      "salida": "2025-07-16T07:05:19.052Z",
+      "valor": null
+    },
+    {
+      "id": "bc11",
+      "placa": "DJK-234",
+      "entrada": "2025-07-16T02:12:12.158860",
+      "salida": "2025-07-16T07:26:47.864Z",
+      "valor": null
+    },
+    {
+      "id": "ad64",
+      "placa": "DJK-234",
+      "entrada": "2025-07-16T02:16:17.124249",
+      "salida": "2025-07-16T07:27:00.880Z",
+      "valor": null
+    },
+    {
+      "id": "f0b8",
+      "placa": "ABT143",
+      "entrada": "2025-07-16T02:38:06.885588",
+      "salida": "2025-07-16T07:46:13.038Z",
+      "valor": null
+    },
+    {
+      "id": "3b99",
+      "placa": "C01Z4",
+      "entrada": "2025-07-16T02:47:00.675394",
+      "salida": "2025-07-16T07:59:04.345Z",
+      "valor": null
+    },
+    {
+      "id": "9f68",
+      "placa": "DJK-236",
+      "entrada": "2025-07-16T02:50:26.166019",
+      "salida": "2025-07-16T07:59:00.948Z",
+      "valor": null
+    },
+    {
+      "id": "3e39",
+      "placa": "DJK236",
+      "entrada": "2025-07-16T02:52:47.233818",
+      "salida": "2025-07-16T07:58:56.693Z",
+      "valor": null
+    },
+    {
+      "id": "46fb",
+      "placa": "ABC123",
+      "entrada": "2025-07-16T03:11:53.594288",
+      "salida": null,
+      "valor": null
+    }
+  ],
+  "trabajadores": [
+    {
+      "id": 1,
+      "nombre": "Yoelmis",
+      "placa": "ABC123"
+    },
+    {
+      "id": 2,
+      "nombre": "Maria A",
+      "placa": "DJK236"
+    }
+  ]
+}
