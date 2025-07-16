@@ -53,18 +53,123 @@
       "id": "46fb",
       "placa": "ABC123",
       "entrada": "2025-07-16T03:11:53.594288",
+      "salida": "2025-07-16T17:25:38.079Z",
+      "valor": null
+    },
+    {
+      "id": "8b3d",
+      "placa": "DJK236",
+      "entrada": "2025-07-16T09:50:08.492578",
+      "salida": "2025-07-16T14:55:09.579Z",
+      "valor": null
+    },
+    {
+      "id": "44b6",
+      "placa": "AAA123",
+      "entrada": "2025-07-16T09:54:52.868386",
+      "salida": "2025-07-16T20:57:48.347Z",
+      "valor": null
+    },
+    {
+      "id": "3699",
+      "placa": "EACEE",
+      "entrada": "2025-07-16T12:10:20.614438",
+      "salida": "2025-07-16T17:26:00.946Z",
+      "valor": null
+    },
+    {
+      "id": "aaca",
+      "placa": "7R128",
+      "entrada": "2025-07-16T16:25:41.194085",
+      "salida": "2025-07-16T16:57:32.678131",
+      "valor": null
+    },
+    {
+      "id": "e093",
+      "placa": "CUNODL",
+      "entrada": "2025-07-16T16:25:41.230088",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "94ad",
+      "placa": "NORASULTAOR",
+      "entrada": "2025-07-16T16:25:41.269099",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "58a7",
+      "placa": "DJK23",
+      "entrada": "2025-07-16T16:27:14.673534",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "5292",
+      "placa": "DJK23",
+      "entrada": "2025-07-16T16:36:31.516539",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "9fa1",
+      "placa": "DJK236",
+      "entrada": "2025-07-16T16:41:40.034757",
+      "salida": "2025-07-16T16:43:51.222569",
+      "valor": null
+    },
+    {
+      "id": "a6f4",
+      "placa": "DJK23D",
+      "entrada": "2025-07-16T16:42:46.505840",
+      "salida": "2025-07-16T16:46:18.493525",
+      "valor": null
+    },
+    {
+      "id": "0c54",
+      "placa": "DJK236",
+      "entrada": "2025-07-16T16:44:01.292788",
+      "salida": "2025-07-16T16:50:54.191752",
+      "valor": null
+    },
+    {
+      "id": "006d",
+      "placa": "QHJL123",
+      "entrada": "2025-07-16T16:48:06.963888",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "8b3f",
+      "placa": "CHECKTH",
+      "entrada": "2025-07-16T16:51:49.686600",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "7d10",
+      "placa": "7R124",
+      "entrada": "2025-07-16T16:53:07.691732",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "9e19",
+      "placa": "IIRTAA",
+      "entrada": "2025-07-16T16:54:34.335728",
       "salida": null,
       "valor": null
     }
   ],
   "trabajadores": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Yoelmis",
       "placa": "ABC123"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Maria A",
       "placa": "DJK236"
     }

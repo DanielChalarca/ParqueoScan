@@ -18,7 +18,7 @@ async function cargarRegistros() {
 
   data.forEach((registro) => {
     const trabajador = trabajadores.find(t => t.placa.toUpperCase() === registro.placa.toUpperCase())
-    const nombre = trabajador ? trabajador.nombre : null
+    const nombre = trabajador ? trabajador.nombre : null;
 
     const div = document.createElement("div")
     div.className = "registro"
