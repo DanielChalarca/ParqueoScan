@@ -1,0 +1,21 @@
+{
+  "registros": [
+  ],
+  "trabajadores": [
+    {
+      "id": "1",
+      "nombre": "Yoelmis",
+      "placa": "ABC123"
+    },
+    {
+      "id": "2",
+      "nombre": "Maria A",
+      "placa": "DJK236"
+    },
+    {
+      "id": "3",
+      "nombre": "Alberto",
+      "placa": "ALX169"
+    }
+  ]
+}
