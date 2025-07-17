@@ -1,11 +1,9 @@
 # 🚗 Cyclope - Automated Vehicle Access Control
 ## 🧠 Description
-
-Vehicle entry and exit registration processes are typically carried out manually by staff who record vehicle information for access control purposes.
-Automating this process, user wait times can be significantly reduced, enabling a smoother flow of vehicles. With Cyclope, a character recognition system using cameras is implemented to automatically capture vehicle data during entry and exit. This information is then stored and processed to enhance vehicle access management and control.
-By integrating a frontend SPA (built with Vite), a Python-based OCR backend, and a mock API with JSON Server, Cyclope provides a fast, testable, and scalable prototype for smart parking or access control systems.
+Vehicle entry and exit registration processes are typically carried out manually by staff who record vehicle information for access control purpose.
+By automating this process, user wait times can be significantly reduced, enabling smoother flow of vehicle. Whith **CYCLOPE**, a character recognition system using cameras is implemented to automatically capture vehicle data during entry and exit. This information is then stored and processed to enhace vehicule access management and control.
+by integrating a fontend **SPA** (built whit **Vite**), a **Python-based OCR** backend, and a mock **API** with **JSON server**, **CYCLOPE** provides a fast, testtable and scalable prototype for smart parking or access control system.
 ---
-
 ## ⚙️ Technologies Used
 
 | **Technology**    | **Usage**                                                              |
