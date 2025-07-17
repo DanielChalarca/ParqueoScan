@@ -1,4 +1,11 @@
 export function dashboardSettings() {
+    const logoutButton = document.getElementById("logout-button");
+    logoutButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        localStorage.removeItem("loggedInUser");
+        window.location.href = "/login";
+    });
+
     const API_URL = "http://localhost:3000"
     const lista = document.getElementById("lista-registros")
     

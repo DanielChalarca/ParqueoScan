@@ -24,5 +24,35 @@
       "nombre": "Alberto",
       "placa": "ALX169"
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "nombre": "alberto",
+      "placa": "ALX169",
+      "contraseña": "alberto123",
+      "admin": true
+    },
+    {
+      "id": "fcc2",
+      "nombre": "pepe",
+      "placa": "ELPEPE",
+      "contraseña": "pepe123",
+      "admin": false
+    },
+    {
+      "id": "c8ff",
+      "nombre": "tilin",
+      "placa": "ESOTILIN",
+      "contraseña": "TALES",
+      "admin": false
+    },
+    {
+      "id": "fbf8",
+      "nombre": "elpepe",
+      "placa": "TALYCUAL",
+      "contraseña": "talesss",
+      "admin": false
+    }
   ]
 }
