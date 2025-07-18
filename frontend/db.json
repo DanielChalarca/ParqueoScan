@@ -160,6 +160,48 @@
       "entrada": "2025-07-16T16:54:34.335728",
       "salida": null,
       "valor": null
+    },
+    {
+      "id": "16d5",
+      "placa": "DJK236",
+      "entrada": "2025-07-18T11:50:04.677804",
+      "salida": "2025-07-18T11:51:13.896026",
+      "valor": null
+    },
+    {
+      "id": "7a32",
+      "placa": "7R128",
+      "entrada": "2025-07-18T11:52:55.537933",
+      "salida": "2025-07-18T11:53:54.796949",
+      "valor": null
+    },
+    {
+      "id": "15f9",
+      "placa": "DJK236",
+      "entrada": "2025-07-18T11:53:23.948695",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "025f",
+      "placa": "BTO1ZB",
+      "entrada": "2025-07-18T11:53:44.057555",
+      "salida": "2025-07-18T11:54:33.377330",
+      "valor": null
+    },
+    {
+      "id": "fbdc",
+      "placa": "BTO12B",
+      "entrada": "2025-07-18T11:54:09.511022",
+      "salida": null,
+      "valor": null
+    },
+    {
+      "id": "1e06",
+      "placa": "ARRIWBB",
+      "entrada": "2025-07-18T12:13:07.373458",
+      "salida": null,
+      "valor": null
     }
   ],
   "trabajadores": [

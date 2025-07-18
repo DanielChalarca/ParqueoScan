@@ -46,6 +46,7 @@ by integrating a fontend **SPA** (built whit **Vite**), a **Python-based OCR** b
 cd backend/
 pip install easyocr
 pip install easyocr imutils
+pip install imports
 ```
 Then, run the backend service:
 ```bash
