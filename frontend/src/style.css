@@ -103,3 +103,53 @@ button:hover {
   font-weight: bold;
   margin-bottom: 0.6rem;
 }
+
+/* 404.estilos */
+.not-found-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh; /* Para centrar verticalmente en la pantalla */
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.not-found-container h1 {
+    font-size: 8em;
+    margin-bottom: 0.1em;
+    color: #dc3545; /* Rojo de error */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.not-found-container h2 {
+    font-size: 2.5em;
+    margin-bottom: 1em;
+    color: #6c757d;
+}
+
+.not-found-container p {
+    font-size: 1.2em;
+    margin-bottom: 2em;
+    line-height: 1.5;
+}
+
+.back-home-link {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #007bff; /* Azul primario */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-home-link:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}

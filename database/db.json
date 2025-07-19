@@ -6,23 +6,40 @@
       "entrada": "0001-01-01T00:00:00.000000",
       "salida": "9999-12-31T23:59:59.999999",
       "valor": null
+    },
+    {
+      "id": "h853",
+      "placa": "MENTALIDAD",
+      "entrada": "0001-01-01T00:00:00.000000",
+      "salida": "9999-11-29T22:59:59.999999",
+      "valor": null
+    },
+    {
+      "id": "d862",
+      "placa": "POSITIVIDAD",
+      "entrada": "0001-04-02T00:00:00.000000",
+      "salida": "9999-10-30T23:50:50.999999",
+      "valor": null
     }
   ],
   "trabajadores": [
     {
       "id": "1",
       "nombre": "Yoelmis",
-      "placa": "ABC123"
+      "placa": "ABC123",
+      "contraseña":"yoe123"
     },
     {
       "id": "2",
       "nombre": "Maria A",
-      "placa": "DJK236"
+      "placa": "DJK236",
+      "contraseña":"mari123"
     },
     {
       "id": "3",
       "nombre": "Alberto",
-      "placa": "ALX169"
+      "placa": "ALX169",
+      "contraseña":"alberto123" 
     }
   ],
   "users": [
@@ -30,7 +47,7 @@
       "id": "1",
       "nombre": "alberto",
       "placa": "ALX169",
-      "contraseña": "alberto123",
+      "contraseña": "alberto321",
       "admin": true
     },
     {
