@@ -53,20 +53,40 @@
       "id": "46fb",
       "placa": "ABC123",
       "entrada": "2025-07-16T03:11:53.594288",
-      "salida": null,
+      "salida": "2025-07-17T12:19:36.609Z",
       "valor": null
     }
   ],
   "trabajadores": [
     {
-      "id": 1,
+      "id": "1",
       "nombre": "Yoelmis",
       "placa": "ABC123"
     },
     {
-      "id": 2,
+      "id": "2",
       "nombre": "Maria A",
       "placa": "DJK236"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "nombre": "joaquin",
+      "telefono": "304441234",
+      "correo": "hola@test.com",
+      "placa": "XYZ806",
+      "vehiculo": "Carro",
+      "creado": "hoy"
+    },
+    {
+      "id": "ecd2",
+      "nombre": "Gustavo petro",
+      "telefono": "1231231",
+      "correo": "colombia@test.com",
+      "placa": "JPO123",
+      "vehiculo": "Cadillac",
+      "creado": "ayer"
     }
   ]
 }
