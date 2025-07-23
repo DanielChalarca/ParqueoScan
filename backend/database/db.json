@@ -20,6 +20,20 @@
       "entrada": "0001-04-02T00:00:00.000000",
       "salida": "9999-10-30T23:50:50.999999",
       "valor": null
+    },
+    {
+      "id": "6988",
+      "placa": "ESOTILIN",
+      "entrada": "2025-07-22T19:34:44.930682",
+      "salida": "2025-07-22T19:35:26.133228",
+      "valor": null
+    },
+    {
+      "id": "c631",
+      "placa": "ESOTILIN",
+      "entrada": "2025-07-22T20:04:19.469759",
+      "salida": null,
+      "valor": null
     }
   ],
   "trabajadores": [
@@ -27,19 +41,19 @@
       "id": "1",
       "nombre": "Yoelmis",
       "placa": "ABC123",
-      "contraseña":"yoe123"
+      "contraseña": "yoe123"
     },
     {
       "id": "2",
       "nombre": "Maria A",
       "placa": "DJK236",
-      "contraseña":"mari123"
+      "contraseña": "mari123"
     },
     {
       "id": "3",
       "nombre": "Alberto",
       "placa": "ALX169",
-      "contraseña":"alberto123" 
+      "contraseña": "alberto123"
     }
   ],
   "users": [
@@ -47,29 +61,31 @@
       "id": "1",
       "nombre": "alberto",
       "placa": "ALX169",
-      "contraseña": "alberto321",
-      "admin": true
+      "contraseña": "alberto321"
     },
     {
       "id": "fcc2",
       "nombre": "pepe",
       "placa": "ELPEPE",
-      "contraseña": "pepe123",
-      "admin": false
+      "contraseña": "pepe123"
     },
     {
       "id": "c8ff",
       "nombre": "tilin",
       "placa": "ESOTILIN",
-      "contraseña": "TALES",
-      "admin": false
+      "contraseña": "TALES"
     },
     {
       "id": "fbf8",
       "nombre": "elpepe",
       "placa": "TALYCUAL",
-      "contraseña": "talesss",
-      "admin": false
+      "contraseña": "talesss"
+    },
+    {
+      "id": "1753230566233",
+      "nombre": "Mario",
+      "placa": "MAR10B",
+      "contraseña": "mario123"
     }
   ]
 }

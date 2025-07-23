@@ -12,14 +12,14 @@ if not cam.isOpened():
     print("no se pudo abrir la cámara")
     exit()
 
-print("cámara lista")
-print("presiona c para capturar placa")
-print("presiona q para cerrar la ventana")
+print("Cámara lista.")
+print("Presiona 'C' para capturar placa.")
+print("Presiona 'Q' para cerrar la ventana.")
 
 while True:
     ret, frame = cam.read()
     if not ret:
-        print("error al leer de la cámara")
+        print("Error al leer de la cámara.")
         break
 
     cv2.imshow("Lector de Placas", frame)
@@ -27,7 +27,7 @@ while True:
     key = cv2.waitKey(1) & 0xFF
 
     if key == ord('c'):
-        print("capturando imagen")
+        print("Capturando imagen.")
         resultado = reader.readtext(frame)
         if resultado:
             for bbox, texto, conf in resultado:
@@ -35,7 +35,7 @@ while True:
 
                 if len(placa) >= 5:
                     hora_actual = datetime.now().isoformat()
-                    print(f"placa detectada: {placa}")
+                    print(f"Placa detectada: {placa}")
 
                     actualizar_registro = None
                     try:
@@ -67,7 +67,7 @@ while True:
                                 print(f"Error al registrar entrada")
 
                     except Exception as e:
-                        print(f"error de conexión {e}")
+                        print(f"Error de conexión {e}")
                     break
                 else:
                     print(f"Placa '{placa}' es demasiado corta o no válida.")
