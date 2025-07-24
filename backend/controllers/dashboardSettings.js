@@ -135,7 +135,7 @@ export function adminDashboardSettings() {
 
 // --- Dashboard para USUARIO NORMAL ---
 export function userDashboardSettings() {
-    const logoutButton = document.getElementById("logout-button-user"); // Nuevo ID para el botón de logout del user dashboard
+    const logoutButton = document.getElementById("logout-button"); // Nuevo ID para el botón de logout del user dashboard
     const userLista = document.getElementById("user-lista-registros"); // Asumiendo este ID para el user dashboard
 
     if (logoutButton) {
@@ -144,6 +144,14 @@ export function userDashboardSettings() {
             localStorage.removeItem("user"); // Consistente
             history.pushState({}, "", "/login");
             router(); // Renderiza la vista de login
+        });
+    }
+
+    const payButton = document.querySelector(".pay-button");
+    if (payButton) {
+        payButton.addEventListener("click", () => {
+            history.pushState({}, "", "/payment-options"); // Navega a la nueva ruta
+            router(); // Ejecuta el router para renderizar la vista de pago
         });
     }
 
@@ -218,4 +226,200 @@ export function userDashboardSettings() {
 
     // Inicializar la carga de registros para el usuario
     cargarRegistrosUsuario();
+}
+
+export function adminDashboardWorkersSettings() {
+    const API_URL = 'http://localhost:3000/trabajadores';
+
+    // Referencias a elementos del DOM
+    const logoutButton = document.getElementById("logout-button");
+    const registroForm = document.getElementById('registro-form');
+    const nameInput = document.getElementById('name');
+    const placaInput = document.getElementById('placa');
+    const passwordInput = document.getElementById('password');
+    const registerButton = document.getElementById('register-button');
+    const listaTrabajadoresDiv = document.getElementById('lista-trabajadores');
+    // Las referencias al modal de confirmación han sido eliminadas
+
+    let currentEditingId = null; // Para rastrear qué registro se está editando
+
+    const currentUser = JSON.parse(localStorage.getItem("user"));
+    const adminNameSpan = document.getElementById("admin-name");
+    if (adminNameSpan && currentUser && currentUser.nombre) {
+        adminNameSpan.textContent = currentUser.nombre;
+    }
+
+    if (logoutButton) {
+        logoutButton.addEventListener("click", (event) => {
+            event.preventDefault();
+            localStorage.removeItem("user"); // Consistente con localStorage.setItem("user")
+            history.pushState({}, "", "/login");
+            router(); // Renderiza la vista de login
+        });
+    }
+
+    // --- Funciones CRUD ---
+
+    /**
+     * Obtiene todos los trabajadores de la API.
+     */
+    async function getTrabajadores() {
+        try {
+            listaTrabajadoresDiv.innerHTML = '<h4>Registros Actuales</h4><p class="no-records-message">Cargando todos los registros...</p>';
+            const response = await fetch(API_URL);
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const trabajadores = await response.json();
+            renderTrabajadores(trabajadores);
+        } catch (error) {
+            console.error("Error al obtener trabajadores:", error);
+            listaTrabajadoresDiv.innerHTML = '<h4>Registros Actuales</h4><p class="error-message">Error al cargar los registros. Asegúrate de que json-server esté ejecutándose.</p>';
+        }
+    }
+
+    /**
+     * Renderiza la lista de trabajadores en el DOM.
+     * @param {Array} trabajadores - Array de objetos de trabajadores.
+     */
+    function renderTrabajadores(trabajadores) {
+        listaTrabajadoresDiv.innerHTML = '<h4>Registros Actuales</h4>';
+        if (trabajadores.length === 0) {
+            listaTrabajadoresDiv.innerHTML += '<p class="no-records-message">No hay registros de parqueo. ¡Añade uno!</p>';
+            return;
+        }
+
+        const ul = document.createElement('ul');
+        ul.className = 'registros-list';
+
+        trabajadores.forEach(trabajador => {
+            const li = document.createElement('li');
+            li.className = 'registro';
+            li.dataset.id = trabajador.id; // Guarda el ID en el dataset
+
+            li.innerHTML = `
+                    <div class="registro-info">
+                        <p><strong>ID:</strong> ${trabajador.id}</p>
+                        <p><strong>Nombre:</strong> ${trabajador.nombre}</p>
+                        <p><strong>Placa:</strong> ${trabajador.placa}</p>
+                        <p><strong>Contraseña:</strong> ${trabajador.contraseña ? '********' : 'N/A'}</p>
+                    </div>
+                    <div class="registro-actions">
+                        <button class="action-button edit-button" data-id="${trabajador.id}">Editar</button>
+                        <button class="action-button delete-button" data-id="${trabajador.id}">Eliminar</button>
+                    </div>
+                `;
+            ul.appendChild(li);
+        });
+        listaTrabajadoresDiv.appendChild(ul);
+    }
+
+    // Las funciones openDeleteModal y closeDeleteModal han sido eliminadas
+
+    // --- Manejadores de Eventos ---
+
+    // Manejador para el envío del formulario (Crear/Actualizar)
+    registroForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const nombre = nameInput.value.trim();
+        const placa = placaInput.value.trim();
+        const contraseña = passwordInput.value.trim();
+
+        if (!nombre || !placa || !contraseña) {
+            console.warn("Todos los campos son obligatorios.");
+            return;
+        }
+
+        const trabajadorData = {
+            nombre: nombre,
+            placa: placa,
+            contraseña: contraseña
+        };
+
+        try {
+            let response;
+            if (currentEditingId) {
+                // Modo Actualizar (PUT)
+                response = await fetch(`${API_URL}/${currentEditingId}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(trabajadorData)
+                });
+                console.log("Registro actualizado con ID:", currentEditingId);
+                currentEditingId = null;
+                registerButton.textContent = 'Entrar';
+                registerButton.classList.remove('update-button-style');
+            } else {
+                // Modo Crear (POST)
+                response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(trabajadorData)
+                });
+                const newTrabajador = await response.json();
+                console.log("Nuevo registro añadido con ID:", newTrabajador.id);
+            }
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            getTrabajadores();
+            registroForm.reset();
+
+        } catch (e) {
+            console.error("Error al añadir/actualizar el documento: ", e);
+            alert("Hubo un error al guardar el registro. Por favor, inténtalo de nuevo.");
+        }
+    });
+
+    // Manejador para los botones de Editar y Eliminar (delegación de eventos)
+    listaTrabajadoresDiv.addEventListener('click', async (e) => {
+        const target = e.target;
+        const id = target.dataset.id;
+
+        if (target.classList.contains('edit-button')) {
+            try {
+                const response = await fetch(`${API_URL}/${id}`);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const trabajadorToEdit = await response.json();
+
+                nameInput.value = trabajadorToEdit.nombre;
+                placaInput.value = trabajadorToEdit.placa;
+                passwordInput.value = trabajadorToEdit.contraseña;
+                currentEditingId = id;
+                registerButton.textContent = 'Actualizar';
+                registerButton.classList.add('update-button-style');
+            } catch (error) {
+                console.error("Error al preparar la edición:", error);
+                alert("No se pudo cargar el registro para edición. Por favor, inténtalo de nuevo.");
+            }
+
+        } else if (target.classList.contains('delete-button')) {
+            // Lógica para Eliminar con confirm()
+            if (confirm('¿Estás seguro de que quieres eliminar este registro?')) {
+                try {
+                    const response = await fetch(`${API_URL}/${id}`, {
+                        method: 'DELETE'
+                    });
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    console.log("Registro eliminado con ID:", id);
+                    getTrabajadores();
+                } catch (error) {
+                    console.error("Error al eliminar el documento:", error);
+                    alert("Hubo un error al eliminar el registro. Por favor, inténtalo de nuevo.");
+                }
+            }
+        }
+    });
+
+    // Los manejadores para confirmDeleteBtn y cancelDeleteBtn han sido eliminados
+
+    // Carga inicial de los trabajadores al cargar la página
+    getTrabajadores();
 }

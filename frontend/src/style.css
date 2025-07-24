@@ -1,6 +1,11 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: sans-serif;
-  padding: 2rem;
   background: #f2f0f8;
   color: #2d2d2d;
 }
@@ -45,13 +50,6 @@ button:hover {
   background-color: #3a2c91;
 }
 
-
-body {
-  font-family: sans-serif;
-  padding: 2rem;
-  background: #f2f0f8;
-  color: #2d2d2d;
-}
 
 h1 {
   color: #4c3bb3;
@@ -140,7 +138,7 @@ button:hover {
 .back-home-link {
     display: inline-block;
     padding: 12px 25px;
-    background-color: #007bff; /* Azul primario */
+    background-color: #4c3bb3;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -150,6 +148,565 @@ button:hover {
 }
 
 .back-home-link:hover {
-    background-color: #0056b3;
+    background-color: #4c3bb3;
     transform: translateY(-2px);
+}
+
+
+
+
+
+/* Estilos del Header */
+.main-header {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center; 
+  background-color: #4c3bb3; 
+  color: white;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header-left,
+.header-right {
+  flex: 1; 
+  display: flex; 
+  align-items: center;
+}
+
+.header-left {
+  justify-content: flex-start;
+}
+
+.header-center {
+  flex: 2; 
+  display: flex;
+  justify-content: center;
+  gap: 15px; 
+  color: #fff;
+}
+
+.header-right {
+  justify-content: flex-end; 
+}
+
+.header-logo {
+  height: 50px;
+  width: auto; 
+}
+
+
+.nav-button {
+  background-color: transparent; 
+  color: white;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.2); 
+  border-radius: 5px;
+}
+
+
+
+
+/* Estilos del Footer */
+.main-footer {
+  background-color: #333; 
+  color: white;
+  text-align: center;
+  padding: 15px 20px;
+  margin-top: auto; 
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2); 
+}
+
+
+
+/* estilos para el  formulario de registro */
+
+.register-container {
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidad */
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para que no sea demasiado grande en pantallas grandes */
+    text-align: center; /* Centra el contenido dentro del contenedor */
+    box-sizing: border-box; /* Incluye padding y border en el ancho/alto */
+    margin: auto;
+    margin-top: 90px; /* Espacio superior para separar del header o cualquier otro contenido */
+}
+
+.register-container h1 {
+    color: #4c3bb3; /* Color primario más oscuro */
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    gap: 15px; /* Espacio entre los elementos del formulario */
+    text-align: left; /* Alinea el texto de los labels a la izquierda */
+}
+
+.register-container label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px; /* Espacio debajo de la etiqueta */
+}
+
+/* Estilos para los campos de entrada de texto y contraseña */
+.register-container input[type="text"],
+.register-container input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* Importante para que el padding no aumente el ancho */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.register-container input[type="text"]:focus,
+.register-container input[type="password"]:focus {
+    border-color: #4c3bb3; /* Borde más oscuro al enfocar */
+    box-shadow: 0 0 8px rgba(76, 59, 179, 0.2); /* Sombra al enfocar */
+    outline: none; /* Elimina el contorno predeterminado del navegador */
+}
+
+/* Estilo específico para el botón de registro por su ID */
+#register-button {
+    background-color: #4c3bb3; /* Color principal del botón */
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px; /* Espacio superior para separarlo de los inputs */
+    width: 100%; /* El botón ocupa todo el ancho disponible */
+}
+
+#register-button:hover {
+    background-color: #3a2c91; /* Color más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Efecto de elevación sutil */
+}
+
+#register-button:active {
+    background-color: #2b1f7a; /* Color aún más oscuro al hacer clic */
+    transform: translateY(0);
+}
+
+/* Estilos para el enlace "Inicia sesion" */
+.register-container div a {
+    color: #4c3bb3; /* Color del enlace, que coincida con el tema */
+    text-decoration: none; /* Quita el subrayado predeterminado */
+    font-size: 0.95em;
+    margin-top: 20px; /* Espacio superior para separarlo del botón */
+    display: block; /* Asegura que ocupe su propia línea para el margen */
+    transition: color 0.3s ease;
+}
+
+.register-container div a:hover {
+    color: #3a2c91; /* Color más oscuro al pasar el ratón */
+    text-decoration: underline; /* Subraya al pasar el ratón */
+}
+
+
+
+
+
+
+
+/* Estilos del  Login */
+.login-container {
+    background-color: #ffffff; 
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; 
+    text-align: center; 
+    box-sizing: border-box; 
+    margin: auto;
+    margin-top: 90px;
+
+}
+
+.login-container h1 {
+    color: #4c3bb3; 
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    font-weight: 600;
+}
+
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; 
+    text-align: left; 
+}
+
+.login-container label {
+    font-weight: 600;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.login-container input[type="text"], 
+.login-container input[type="password"],
+.login-container input[type="placa"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.login-container input[type="password"]:focus,
+.login-container input[type="placa"]:focus,
+#placa:focus { 
+    border-color: #4c3bb3;
+    box-shadow: 0 0 8px rgba(76, 59, 179, 0.2); 
+    outline: none; 
+}
+
+
+#login-button {
+    background-color: #4c3bb3; 
+    color: white;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    width: 100%;
+}
+
+#login-button:hover {
+    background-color: #3a2c91; 
+    transform: translateY(-2px);
+}
+
+#login-button:active {
+    background-color: #2b1f7a; 
+    transform: translateY(0);
+}
+
+.login-container div a {
+    color: #4c3bb3; 
+    text-decoration: none; 
+    font-size: 0.95em;
+    margin-top: 20px;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.login-container div a:hover {
+    color: #3a2c91; 
+    text-decoration: underline;
+}
+
+
+
+/* estilos para carta de usaurio personal */
+.dashboard-container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;   
+    max-width: 800px;
+    text-align: left;
+    box-sizing: border-box;
+    margin-top: 10px; 
+    margin-bottom: 18.5px; 
+    margin-left: 18pc;
+}
+
+.dashboard-container h1 {
+    color: #4c3bb3;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-align: center; /* Centra el título principal */
+}
+
+.dashboard-container p {
+    color: #555;
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+#user-name {
+    font-weight: 700;
+    color: #4c3bb3;
+}
+
+.user-info {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #eee;
+    margin-bottom: 25px;
+}
+
+.user-info h3 {
+    color: #3a2c91; /* Un morado ligeramente más oscuro para subtítulos */
+    margin-bottom: 15px;
+    font-size: 1.6em;
+    text-align: center;
+}
+
+.registros-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los registros individuales */
+}
+
+.registro-parqueo { /* Estilo para cada registro individual dentro del dashboard */
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    border-left: 4px solid #4c3bb3;
+    transition: transform 0.2s ease;
+}
+
+.registro-parqueo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.registro-parqueo p {
+    margin-bottom: 5px;
+    color: #333;
+    font-size: 0.95em;
+}
+
+.registro-parqueo strong {
+    color: #4c3bb3;
+}
+
+.dashboard-actions {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.pay-button, .back-to-dashboard-button {
+    background-color: #4c3bb3;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    min-width: 150px; 
+    text-decoration: none;
+}
+
+.pay-button:hover, .back-to-dashboard-button:hover {
+    background-color: #3a2c91;
+    transform: translateY(-2px);
+}
+
+
+
+/* --- Estilos para Opciones de Pago --- */
+.payment-options-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px; /* Un ancho adecuado para las opciones */
+    text-align: center;
+    margin-top: 20px; /* Espacio si el header está visible */
+    margin-bottom: 20px; /* Espacio si el footer está visible */
+    margin-left: 20pc;
+}
+
+.payment-options-container h1 {
+    color: #4c3bb3;
+    margin-bottom: 15px;
+    font-size: 2.5em;
+}
+
+.payment-options-container p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.payment-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.payment-type-item {
+    background-color: #f2f0f8;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    border: 1px solid #e0e0e0;
+}
+
+.payment-type-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.payment-type-item img {
+    width: 80px; 
+    height: 80px;
+    object-fit: contain; 
+    margin-bottom: 10px;
+}
+
+.payment-type-item p {
+    font-weight: 600;
+    color: #4c3bb3; /* Color del texto de la opción */
+    font-size: 1em;
+    margin: 0; /* Elimina márgenes extra de los párrafos */
+}
+
+.payment-actions {
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/* estilos header logo */
+
+.header-logo{
+    height: 50px; /* Ajusta la altura del logo */
+    width: auto; /* Mantiene la proporción del logo */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+    border-radius:50px ;
+    border: 1px solid #fff;
+}
+.header-logo:hover {
+    transform: scale(1.1); /* Efecto de zoom al pasar el ratón */
+}
+
+
+/* estilos formulario de crud trabajadores */
+.form-container {
+    background-color: #fff;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+/* Estilos generales del formulario */
+#registro-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los elementos del formulario */
+}
+
+#registro-form h2 { /* Si añades un título al formulario */
+    text-align: center;
+    color: #6A1B9A;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+}
+
+#registro-form label {
+    font-weight: 600;
+    color: #6A1B9A;
+    margin-bottom: 5px;
+    display: block; /* Asegura que la etiqueta ocupe su propia línea */
+}
+
+#registro-form input[type="text"],
+#registro-form input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid  #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color:  #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+#registro-form input[type="text"]:focus,
+#registro-form input[type="password"]:focus {
+    border-color: #9C27B0;
+    box-shadow: 0 0 0 3px rgba(156, 39, 176, 0.2); /* Sutil sombra morada al enfocar */
+    outline: none; /* Remueve el contorno por defecto del navegador */
+}
+
+/* Estilos para el botón de enviar (submit button) */
+#register-button {
+    background-color: #6A1B9A;
+    color: #fff;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+    width: 100%; /* El botón ocupa todo el ancho */
+}
+
+#register-button:hover {
+    background-color: #4A148C; /* Morado más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño efecto de elevación */
+}
+
+#register-button:active {
+    transform: translateY(0); /* Vuelve a su posición original al hacer clic */
+}
+
+/* Estilos para el mensaje de éxito o error (si los añades en JS) */
+.message {
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
+.success-message {
+    background-color: rgba(76, 175, 80, 0.1); /* Verde suave */
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.error-message {
+    background-color: rgba(244, 67, 54, 0.1); /* Rojo suave */
+    color: #F44336;
+    border: 1px solid #F44336;
 }
