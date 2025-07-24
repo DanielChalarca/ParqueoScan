@@ -15,44 +15,46 @@ if not cam.isOpened():
     print("No se puede abrir la cámara")
     exit()
 
-print("Cámara lista.")
-print("Presiona 'C' para capturar placa.")
-print("Presiona 'Q' para cerrar la ventana.")
+# URL de la API
+API_URL = "http://localhost:3000/registros"
+
+# Conexión al Arduino (ajusta el puerto según tu sistema)
+try:
+    arduino = serial.Serial('COM3', 9600)  # Reemplaza 'COM3' por tu puerto
+    time.sleep(2)  # Esperar a que se estabilice la conexión
+    print("Conexión establecida con Arduino")
+except Exception as e:
+    print(f"Error conectando con Arduino: {e}")
+    arduino = None
+
+print("Cámara lista. Presiona 'c' para capturar o 'q' para salir.")
 
 while True:
     ret, frame = cam.read()
     if not ret:
-        print("Error al leer de la cámara.")
+        print("Error al leer de la cámara")
         break
 
     cv2.imshow("Lector de Placas", frame)
     key = cv2.waitKey(1) & 0xFF
 
     if key == ord('c'):
-        print("Capturando imagen.")
         resultado = reader.readtext(frame)
         if resultado:
             for bbox, texto, conf in resultado:
                 placa = re.sub(r'[^A-Za-z0-9]', '', texto).upper()
                 if len(placa) >= 5:
-                    hora_actual = datetime.now().isoformat()
-                    print(f"Placa detectada: {placa}")
-
-                    actualizar_registro = None
                     try:
-                        registros_api = requests.get(API_URL).json()
-                        for i in registros_api:
-                            if "placa" in i and i["placa"] == placa:
-                                if i.get("salida") is None:
-                                    actualizar_registro = i
-                                    break
+                        res = requests.get(f"{API_URL}?placa={placa}")
+                        registros = res.json()
+                        registros = sorted(registros, key=lambda x: x['entrada'], reverse=True)
 
-                        if actualizar_registro:
-                            actualizar_registro["salida"] = hora_actual
-                            update_url = f"{API_URL}/{actualizar_registro['id']}"
-                            response_put = requests.put(update_url, json=actualizar_registro)
-
-                            print(f"Salida registrada exitosamente para la placa: {placa}")
+                        if registros and registros[0]['salida'] is None:
+                            id_registro = registros[0]['id']
+                            salida = datetime.now().isoformat()
+                            patch = requests.patch(f"{API_URL}/{id_registro}", json={"salida": salida})
+                            if patch.status_code == 200:
+                                print(f"Salida registrada para {placa}")
                         else:
                             entrada = datetime.now().isoformat()
                             nuevo = {
@@ -73,12 +75,10 @@ while True:
                             print("Arduino no conectado, no se envió comando")
 
                     except Exception as e:
-                        print(f"Error de conexión {e}")
+                        print(f"Error de conexión o procesamiento: {e}")
                     break
-                else:
-                    print(f"Placa '{placa}' es demasiado corta o no válida.")
         else:
-            print("No se detectó texto en la imagen.")
+            print("No se detectó texto en la imagen")
 
     elif key == ord('q'):
         print("Cerrando cámara")
