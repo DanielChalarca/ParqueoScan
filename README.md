@@ -74,5 +74,3 @@ json-server --watch db.json --port 3000
 ```
 ---
 
-# 📝 License
-This project is for educational and prototyping purposes.
