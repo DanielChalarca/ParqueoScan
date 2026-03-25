@@ -126,6 +126,8 @@ ParqueoScan/
 
 This section explains step by step how to physically connect all components to the Arduino using a breadboard.
 
+<img width="1536" height="1024" alt="ChatGPT Image 25 mar 2026, 01_59_19 p m" src="https://github.com/user-attachments/assets/aca8e6bc-2db0-460a-9d8f-3309d4a9de4f" />
+
 ### What you need
 
 - 1× Arduino Uno
